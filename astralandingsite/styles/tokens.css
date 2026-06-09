@@ -1,0 +1,117 @@
+/* ============================================================
+   ASTRA · COLOR TOKENS
+   A near-monochrome system. The product is video-forward and
+   full-bleed; "color" comes almost entirely from translucent
+   white chrome floating over black + footage. No accent hue,
+   no gradients-as-background, no green.
+   ============================================================ */
+:root {
+  /* --- Base ---------------------------------------------- */
+  --astra-black: #000000;          /* page background, always */
+  --astra-white: #ffffff;          /* type, icons, primary fills */
+
+  /* --- White, by opacity (the real palette) -------------- */
+  --white-100: rgba(255, 255, 255, 1);
+  --white-90:  rgba(255, 255, 255, 0.90);   /* default body text on footage */
+  --white-80:  rgba(255, 255, 255, 0.80);   /* kickers, secondary labels */
+  --white-45:  rgba(255, 255, 255, 0.45);   /* glass edge highlight (top/bottom) */
+  --white-15:  rgba(255, 255, 255, 0.15);   /* glass edge mid */
+  --white-10:  rgba(255, 255, 255, 0.10);   /* inset highlight line */
+  --white-01:  rgba(255, 255, 255, 0.01);   /* glass base tint */
+
+  /* --- Black, by opacity --------------------------------- */
+  --black-05:  rgba(0, 0, 0, 0.05);          /* strong-glass drop shadow */
+
+  /* --- Semantic surfaces --------------------------------- */
+  --surface-page:        var(--astra-black);
+  --surface-glass:       var(--white-01);     /* liquid-glass fill */
+  --surface-solid:       var(--astra-white);  /* white pill buttons/chips */
+
+  /* --- Semantic text ------------------------------------- */
+  --text-primary:        var(--astra-white);  /* headlines, big numbers */
+  --text-body:           var(--white-90);     /* paragraph copy */
+  --text-muted:          var(--white-80);     /* kickers */
+  --text-on-solid:       var(--astra-black);  /* text inside white pills */
+
+  /* --- Semantic borders / edges -------------------------- */
+  --edge-inset:          var(--white-10);      /* inset top highlight */
+}
+
+/* ============================================================
+   ASTRA · TYPOGRAPHY TOKENS
+   Two families, sharply contrasted:
+   - Instrument Serif (ITALIC always) for display — voyage poetry.
+   - Barlow for everything functional — nav, body, labels, tags.
+   Display runs very tight (negative tracking, sub-1 line-height).
+   ============================================================ */
+:root {
+  /* --- Families ------------------------------------------ */
+  --font-heading: 'Instrument Serif', serif;   /* used italic */
+  --font-body:    'Barlow', sans-serif;
+
+  /* --- Display scale (Instrument Serif italic) ----------- */
+  --display-hero:    5.5rem;   /* lg hero headline (88px) */
+  --display-section: 6rem;     /* lg section heading (96px) */
+  --display-card:    2.25rem;  /* card titles (36px) */
+  --display-stat:    2.25rem;  /* big stat numbers (36px) */
+  --display-partner: 1.875rem; /* partner wordmarks (30px) */
+
+  /* --- Body / UI scale (Barlow) -------------------------- */
+  --text-base:  1rem;      /* 16px subheading */
+  --text-sm:    0.875rem;  /* 14px nav links, body, CTA */
+  --text-xs:    0.75rem;   /* 12px chips, stat labels */
+  --text-2xs:   11px;      /* 11px card tags */
+
+  /* --- Weights (Barlow) ---------------------------------- */
+  --weight-light:    300;   /* subheading, body copy, tag text */
+  --weight-regular:  400;
+  --weight-medium:   500;   /* nav links, CTA labels */
+  --weight-semibold: 600;   /* "New" chip */
+
+  /* --- Line height --------------------------------------- */
+  --leading-display: 0.8;    /* hero headline */
+  --leading-section: 0.9;    /* section heading */
+  --leading-none:    1;
+  --leading-tight:   1.25;
+  --leading-snug:    1.375;  /* card body */
+
+  /* --- Tracking (display only; body is normal) ----------- */
+  --track-hero:    -4px;
+  --track-section: -3px;
+  --track-card:    -1px;
+  --track-stat:    -1px;
+}
+
+/* ============================================================
+   ASTRA · SPACING, RADII & LAYOUT TOKENS
+   Generous outer padding (page breathes around full-bleed
+   footage), pill-by-default radius, a couple of soft-rect radii
+   for cards and nested icon tiles.
+   ============================================================ */
+:root {
+  /* --- Radius -------------------------------------------- */
+  --radius-pill:    9999px;     /* default — bare pills everywhere */
+  --radius-card:    1.25rem;    /* glass cards, stat cards (20px) */
+  --radius-tile:    0.75rem;    /* nested icon tile inside a card (12px) */
+
+  /* --- Spacing scale (used across chrome) ---------------- */
+  --space-1:  0.25rem;   /* 4px  — pill inner padding, tag gaps */
+  --space-2:  0.5rem;    /* 8px */
+  --space-3:  0.75rem;   /* 12px — chip x-padding */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px — card padding */
+  --space-6:  1.5rem;    /* 24px — CTA gap, card gap */
+  --space-8:  2rem;      /* 32px — nav x-padding (sm) */
+  --space-16: 4rem;      /* 64px — nav x-padding (lg), section padding */
+
+  /* --- Page layout --------------------------------------- */
+  --nav-top:        1rem;      /* fixed nav offset from top */
+  --section-pad-x:  5rem;      /* lg section horizontal padding (80px) */
+  --section-pad-t:  6rem;      /* content top padding under fixed nav */
+
+  /* --- Component sizing ---------------------------------- */
+  --logo-size:      48px;      /* nav logo circle + right spacer */
+  --icon-tile:      44px;      /* nested glass icon tile in cards */
+  --stat-card-w:    220px;     /* hero stat card width */
+  --card-min-h:     360px;     /* capabilities card min height */
+}
